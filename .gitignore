@@ -1,0 +1,23 @@
+# Dependencias y entornos
+node_modules/
+.venv-astro/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Salidas de build
+dist/
+.vite/
+
+# Sistema y herramientas
+.DS_Store
+.brud/
+*.log
+
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+
+# Salida derivada regenerable (el pipeline la vuelve a crear)
+DATOS/IRSA_FITS_D1/analysis/difference_map.fits

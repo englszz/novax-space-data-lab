@@ -1,0 +1,105 @@
+{
+  "status": "catálogo real de residuos; sin candidato a Planeta X",
+  "created_from": "/home/damiron1/Proyectos/Proyectos/NOVAX/DATOS/IRSA_FITS_D1/analysis",
+  "doi": "10.26131/IRSA652",
+  "epochs": [
+    {
+      "file": "level2_2025W22_1B_0399_1D1_spx_l2b-v20-2025-250.fits",
+      "observation_id": "2025W22_1B_0399_1",
+      "detector": 1,
+      "date_obs": "2025-05-28T07:41:03.035",
+      "mjd_obs": 60823.320174016,
+      "ra_center_deg": 184.954819867,
+      "dec_center_deg": -4.08981110258,
+      "image_shape": [
+        2040,
+        2040
+      ],
+      "bunit": "MJy / sr"
+    },
+    {
+      "file": "level2_2025W27_2A_0443_1D1_spx_l2b-v20-2025-259.fits",
+      "observation_id": "2025W27_2A_0443_1",
+      "detector": 1,
+      "date_obs": "2025-07-05T10:23:54.708",
+      "mjd_obs": 60861.433272083,
+      "ra_center_deg": 184.961578624,
+      "dec_center_deg": -4.0920816276,
+      "image_shape": [
+        2040,
+        2040
+      ],
+      "bunit": "MJy / sr"
+    }
+  ],
+  "method": {
+    "registration": "Astropy celestial WCS from epoch 2 onto epoch 1 grid; bilinear interpolation; diagonal variance propagated with squared weights; contributing bad flags OR-combined",
+    "background": "subtract ZODI model from each IMAGE before differencing",
+    "spectral_compatibility": "Before differencing, interpolate WCS-WAVE at matched sky positions and retain only pixels whose local wavelengths differ by no more than half the narrower local bandpass. This is a bandpass compatibility mask, not spectral interpolation or a full spectral regrid.",
+    "quality_mask_bits": {
+      "TRANSIENT": 1,
+      "OVERFLOW": 2,
+      "SUR_ERROR": 4,
+      "PHANTOM": 16,
+      "REFERENCE": 32,
+      "NONFUNC": 64,
+      "DICHROIC": 128,
+      "MISSING_DATA": 512,
+      "HOT": 1024,
+      "COLD": 2048,
+      "PHANMISS": 16384,
+      "NONLINEAR": 32768,
+      "PERSIST": 131072,
+      "OUTLIER": 524288
+    },
+    "detection": "DAOStarFinder on residual divided by propagated per-pixel uncertainty; positive and negative; threshold 8 x sigma-clipped significance scatter",
+    "source_flag_note": "MP_SOURCE marks pixels mapped to a source in the SPHEREx pipeline; it is not a JPL small-body cross-match.",
+    "variance_note": "Diagonal input variances are propagated through bilinear weights and combined between epochs. Inter-pixel covariance from resampling, PSF matching, and correlated calibration errors are not modeled."
+  },
+  "preview_note": "La imagen del visor se centra y suaviza solo para facilitar la lectura; el catálogo de posiciones se calcula con la diferencia sin suavizar.",
+  "counts": {
+    "total": 218,
+    "conocido": 1,
+    "fuente": 213,
+    "residuo": 4
+  },
+  "known_association": "1994 WZ3",
+  "known_association_projection": {
+    "1994 WZ3": {
+      "name": "1994 WZ3",
+      "epoch1_residual_separation_arcsec": 2.416,
+      "epoch2_position_method": "SkyBoT resolver at exact epoch 2",
+      "epoch2_ra_deg": 188.28504978444474,
+      "epoch2_dec_deg": -3.6155320761337344,
+      "epoch2_x_pixel": 2674.6271663889274,
+      "epoch2_y_pixel": -3.3700946340903712,
+      "projection_inside_epoch2_image": false,
+      "projection_note": "Exact SkyBoT coordinates are used when a resolver response is cached; otherwise this is only a linear-rate approximation."
+    }
+  },
+  "spectral_compatibility": {
+    "rule": "absolute wavelength difference <= half the narrower local bandpass",
+    "median_delta_um": 4.764552431879565e-05,
+    "p99_delta_um": 0.000130669359350577,
+    "max_delta_um": 0.0001351809041807428,
+    "median_narrower_bandpass_um": 0.023330898955464363,
+    "compatible_pixel_percent": 100.0
+  },
+  "epsf_review": {
+    "catalog_records_reviewed": 218,
+    "unassociated_residuals": 4,
+    "review_status_all_records": {
+      "no evaluable: ajuste ePSF incompleto o longitudes de onda incompatibles": 1,
+      "no corroborado como fuente puntual positiva en la época esperada": 211,
+      "no corroborado: el ajuste ePSF da flujo negativo en epoch2, no una fuente puntual positiva": 1,
+      "no corroborado: el ajuste ePSF da flujo negativo en epoch1, no una fuente puntual positiva": 3,
+      "ePSF recupera una fuente puntual positiva en epoch1; compatible con el sentido del residuo": 2
+    },
+    "unassociated_review_status": {
+      "no corroborado: el ajuste ePSF da flujo negativo en epoch1, no una fuente puntual positiva": 3,
+      "no corroborado como fuente puntual positiva en la época esperada": 1
+    },
+    "cutouts_written": 7
+  },
+  "caveat": "Criba inicial con varianza diagonal propagada; no incluye covarianza de remuestreo ni incertidumbre del fondo zodiacal, fotometría PSF o ajuste astrométrico refinado. No demuestra objetos nuevos. Un candidato a Planeta X requiere más épocas y movimiento comprobable."
+}

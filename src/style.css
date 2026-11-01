@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Mokoto";
+  src: url("./fonts/Mokoto-Glitch.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+html, body, #root { min-height: 100%; margin: 0; }
+body { background: #11141c; }

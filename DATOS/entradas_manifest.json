@@ -1,0 +1,81 @@
+{
+  "project": "NOVAX · Planet X and SPHEREx · NASA Space Apps Challenge 2026",
+  "doi": "10.26131/IRSA652",
+  "download_script": "analysis/download_inputs.sh",
+  "query_date_note": "No se registró de forma certificada la fecha exacta de consulta/descarga en IRSA. mtime_local es la marca de tiempo del archivo en disco y no debe presentarse como fecha de consulta. Las fechas DATE-OBS de los FITS son las de observación.",
+  "skybot_note": "Las respuestas de SkyBoT/IMCCE se conservan archivadas para que la ejecución sea offline y reproducible. El pipeline no consulta SkyBoT ni JPL SBDB en vivo.",
+  "inputs": [
+    {
+      "path": "DATOS/IRSA_FITS_D1/level2_2025W22_1B_0399_1D1_spx_l2b-v20-2025-250.fits",
+      "role": "FITS Level 2 QR2, detector D1, época 1",
+      "size_bytes": 71634240,
+      "sha256": "eeab0156c62d0f3e661e4f8cc45042d6807a7765d54450e66f3b89b16dbe3a16",
+      "mtime_local": "2026-10-30T08:02:19.557092+00:00",
+      "note": "Entrada científica principal."
+    },
+    {
+      "path": "DATOS/IRSA_FITS_D1/level2_2025W27_2A_0443_1D1_spx_l2b-v20-2025-259.fits",
+      "role": "FITS Level 2 QR2, detector D1, época 2",
+      "size_bytes": 71634240,
+      "sha256": "ee82abd300e076098d215b83856011a100c829042061ccce9b05389552d8e473",
+      "mtime_local": "2026-10-30T08:04:28.437671+00:00",
+      "note": "Entrada científica principal."
+    },
+    {
+      "path": "DATOS/IRSA_FITS_D1/analysis/epsf_D1_spx_cal-epsf-v1-2026-191.fits",
+      "role": "Calibración ePSF D1 de IRSA",
+      "size_bytes": 7943040,
+      "sha256": "f5eacb19eb90cb96a1684e9116b85f43f615ae5724c0aa26ac0c0ed45fa309e9",
+      "mtime_local": "2026-10-30T15:28:05.636575+00:00",
+      "note": "Usada por review_psf_signals.py."
+    },
+    {
+      "path": "DATOS/IRSA_FITS_D1/analysis/skybot_epoch1.json",
+      "role": "Respuesta SkyBoT archivada, época 1",
+      "size_bytes": 1571291,
+      "sha256": "f602239386c79517a2dca57a3b6fd46f5363389fa113490df626637c5be1a56e",
+      "mtime_local": "2026-10-30T08:19:09.762549+00:00",
+      "note": "Consulta posicional; no se consulta en vivo."
+    },
+    {
+      "path": "DATOS/IRSA_FITS_D1/analysis/skybot_epoch2.json",
+      "role": "Respuesta SkyBoT archivada, época 2",
+      "size_bytes": 2555196,
+      "sha256": "6a620647876c2f27d3c4181ad4a06986d88137a2739f0fece04b4b8076ac46ec",
+      "mtime_local": "2026-10-30T08:19:51.621066+00:00",
+      "note": "Consulta posicional; no se consulta en vivo."
+    },
+    {
+      "path": "DATOS/IRSA_FITS_D1/analysis/skybot_1994wz3_resolver_epoch2.json",
+      "role": "Efeméride exacta archivada de 1994 WZ3",
+      "size_bytes": 615,
+      "sha256": "a1a18bf4240700bc27dae517d29507a812c8ff87db6a85156697fc2e82f79035",
+      "mtime_local": "2026-10-30T08:23:56.227390+00:00",
+      "note": "Resuelve la posición de la época 2."
+    },
+    {
+      "path": "DATOS/IRSA_FITS_D1/analysis/skybot_1994wz3_followup_epoch2.json",
+      "role": "Respuesta SkyBoT de seguimiento archivada",
+      "size_bytes": 304930,
+      "sha256": "1f6f85f188c9cc13076563f546f3c127140b8fb0a7027402f6cdd8543a18ef52",
+      "mtime_local": "2026-10-30T08:23:20.297109+00:00",
+      "note": "Evidencia adicional del cruce."
+    },
+    {
+      "path": "DATOS/consulta_irsa/table_Spectral-Images.csv",
+      "role": "Tabla de resultados de la consulta IRSA",
+      "size_bytes": 369441,
+      "sha256": "0f1e84e560746cf527bdb5078586b8801a680c499f74adc057e673c58fe806d0",
+      "mtime_local": "2026-10-31T23:59:43.626995+00:00",
+      "note": "Evidencia de la búsqueda de observaciones D1."
+    },
+    {
+      "path": "DATOS/consulta_irsa/SpectralImages-wget.sh",
+      "role": "Script wget generado por IRSA",
+      "size_bytes": 2158,
+      "sha256": "08718443a1fe1cf06f186942575d3f5387f614b8800086afcb0eba1a5b55841c",
+      "mtime_local": "2026-10-31T23:59:43.628995+00:00",
+      "note": "Evidencia histórica; contiene una fila D4 descartada."
+    }
+  ]
+}

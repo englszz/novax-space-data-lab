@@ -1,0 +1,83 @@
+{
+  "status": "preliminary_residual_screen; no Planet X claim",
+  "created_utc": "2026-10-31T23:36:25.873849+00:00",
+  "method": {
+    "registration": "Astropy celestial WCS from epoch 2 onto epoch 1 grid; bilinear interpolation; diagonal variance propagated with squared weights; contributing bad flags OR-combined",
+    "background": "subtract ZODI model from each IMAGE before differencing",
+    "spectral_compatibility": "Before differencing, interpolate WCS-WAVE at matched sky positions and retain only pixels whose local wavelengths differ by no more than half the narrower local bandpass. This is a bandpass compatibility mask, not spectral interpolation or a full spectral regrid.",
+    "quality_mask_bits": {
+      "TRANSIENT": 1,
+      "OVERFLOW": 2,
+      "SUR_ERROR": 4,
+      "PHANTOM": 16,
+      "REFERENCE": 32,
+      "NONFUNC": 64,
+      "DICHROIC": 128,
+      "MISSING_DATA": 512,
+      "HOT": 1024,
+      "COLD": 2048,
+      "PHANMISS": 16384,
+      "NONLINEAR": 32768,
+      "PERSIST": 131072,
+      "OUTLIER": 524288
+    },
+    "detection": "DAOStarFinder on residual divided by propagated per-pixel uncertainty; positive and negative; threshold 8 x sigma-clipped significance scatter",
+    "source_flag_note": "MP_SOURCE marks pixels mapped to a source in the SPHEREx pipeline; it is not a JPL small-body cross-match.",
+    "variance_note": "Diagonal input variances are propagated through bilinear weights and combined between epochs. Inter-pixel covariance from resampling, PSF matching, and correlated calibration errors are not modeled."
+  },
+  "epochs": [
+    {
+      "file": "level2_2025W22_1B_0399_1D1_spx_l2b-v20-2025-250.fits",
+      "observation_id": "2025W22_1B_0399_1",
+      "detector": 1,
+      "date_obs": "2025-05-28T07:41:03.035",
+      "mjd_obs": 60823.320174016,
+      "ra_center_deg": 184.954819867,
+      "dec_center_deg": -4.08981110258,
+      "image_shape": [
+        2040,
+        2040
+      ],
+      "bunit": "MJy / sr"
+    },
+    {
+      "file": "level2_2025W27_2A_0443_1D1_spx_l2b-v20-2025-259.fits",
+      "observation_id": "2025W27_2A_0443_1",
+      "detector": 1,
+      "date_obs": "2025-07-05T10:23:54.708",
+      "mjd_obs": 60861.433272083,
+      "ra_center_deg": 184.961578624,
+      "dec_center_deg": -4.0920816276,
+      "image_shape": [
+        2040,
+        2040
+      ],
+      "bunit": "MJy / sr"
+    }
+  ],
+  "wavelength_range_um_approx": [
+    0.734895,
+    1.126278
+  ],
+  "valid_overlap_pixels": 3654419,
+  "valid_overlap_percent_of_reference": 87.813,
+  "spectral_compatibility": {
+    "rule": "absolute wavelength difference <= half the narrower local bandpass",
+    "median_delta_um": 4.764552431879565e-05,
+    "p99_delta_um": 0.000130669359350577,
+    "max_delta_um": 0.0001351809041807428,
+    "median_narrower_bandpass_um": 0.023330898955464363,
+    "compatible_pixel_percent": 100.0
+  },
+  "residual_median_mjy_sr_before_centering": 0.020150959491729736,
+  "residual_sigma_clipped_mjy_sr": 0.029002618044614792,
+  "significance_sigma_clipped": 1.0692304372787476,
+  "positive_residual_count": 175,
+  "negative_residual_count": 43,
+  "positive_with_mp_source_flag": 175,
+  "negative_with_mp_source_flag": 39,
+  "positive_without_mp_source_flag_both_epochs": 0,
+  "negative_without_mp_source_flag_both_epochs": 4,
+  "unflagged_positive_negative_pairs_within_1_to_40_pixels": 0,
+  "interpretation": "No residual pair from this first-pass screen is promoted to an object candidate. Cross-match and astrometric/photometric review are still required."
+}

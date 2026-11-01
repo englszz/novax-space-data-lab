@@ -1,0 +1,4 @@
+astropy>=8.0
+numpy>=2.5
+scipy>=1.18
+photutils>=3.1
