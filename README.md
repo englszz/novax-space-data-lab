@@ -6,6 +6,8 @@ observaciones reales del telescopio **SPHEREx** de la NASA en el detector **D1**
 Proyecto preparado para el **NASA Space Apps Challenge 2026**, desafío
 *Planet X and SPHEREx*.
 
+**Demo:** https://novax-space-data-lab.vercel.app
+
 **Resultado de esta criba: no hay candidato a Planeta X.** Sí se recupera una
 asociación posicional con el asteroide conocido **1994 WZ3** y se documentan los
 límites del análisis sin sobreclamar.

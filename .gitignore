@@ -8,6 +8,7 @@ __pycache__/
 # Salidas de build
 dist/
 .vite/
+.vercel/
 
 # Sistema y herramientas
 .DS_Store

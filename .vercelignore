@@ -1,0 +1,14 @@
+# Insumos científicos grandes que la web no necesita en el build
+DATOS/IRSA_FITS_D1/level2_*.fits
+DATOS/IRSA_FITS_D1/analysis/*.fits
+DATOS/IRSA_FITS_D1/analysis/skybot_*.json
+DATOS/IRSA_FITS_D1/analysis/residual_detections.json
+DATOS/IRSA_FITS_D1/analysis/skybot_crossmatch.json
+DATOS/consulta_irsa/
+DATOS/prueba/
+/analysis/
+.git/
+.venv-astro/
+dist/
+node_modules/
+README.md
