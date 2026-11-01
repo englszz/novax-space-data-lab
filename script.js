@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import DETECTION_CATALOG from './DATOS/real_residual_catalog.json';
 import REAL_DATA_META from './DATOS/real_residual_catalog.meta.json';
 import PREVIEW_URL from './DATOS/IRSA_FITS_D1/analysis/difference_preview.png';
+import LOGO_URL from './src/Imagen pegada.png';
+import BACKGROUND_URL from './src/IMAGENfondo.png';
 const PSF_CUTOUTS = import.meta.glob('./DATOS/IRSA_FITS_D1/analysis/psf_cutouts/*.png', { eager: true, query: '?url', import: 'default' });
 import { 
   Search, Sliders, Play, Pause, ZoomIn, ZoomOut, RotateCcw, 
@@ -354,14 +356,14 @@ export default function App() {
         .novax-app .novax-header-logo { width:88px;height:42px;object-fit:contain;filter:brightness(0) invert(1);opacity:.96; }
         .novax-app input { font-family:var(--font-novax-ui); letter-spacing:.025em; }
         .novax-app .novax-panel { box-shadow:none; }
-        .novax-app .novax-hero { min-height:calc(100vh - 70px); background-image:linear-gradient(180deg,rgba(12,16,25,.34),rgba(12,16,25,.7)),url('/src/IMAGENfondo.png'); background-position:center; background-size:cover; background-repeat:no-repeat; }
+        .novax-app .novax-hero { min-height:calc(100vh - 70px); background-image:linear-gradient(180deg,rgba(12,16,25,.34),rgba(12,16,25,.7)),url('${BACKGROUND_URL}'); background-position:center; background-size:cover; background-repeat:no-repeat; }
         .novax-app .novax-hero-logo { width:min(390px,78vw);height:auto;object-fit:contain;filter:brightness(0) invert(1); }
         .novax-app .novax-hero-content { text-shadow:0 2px 24px rgba(0,0,0,.7); }
         .novax-dashboard-grid { display:grid;grid-template-columns:minmax(0,1fr); }
         .novax-center-column { min-height:520px; }
         @media (min-width:900px) and (min-aspect-ratio:4/3) { .novax-dashboard-grid { flex:0 0 calc(100vh - 7rem);height:calc(100vh - 7rem);grid-template-columns:240px minmax(0,1fr) 300px;grid-template-rows:minmax(0,1fr); } .novax-left-column { grid-column:1;grid-row:1; } .novax-center-column { grid-column:2;grid-row:1;min-height:0;align-self:start;height:max-content; } .novax-right-column { grid-column:3;grid-row:1;height:100%; } }
         @media (min-width:900px) and (max-aspect-ratio:4/3) { .novax-dashboard-grid { height:auto;grid-template-columns:240px minmax(0,1fr);align-items:start; } .novax-left-column { grid-column:1;grid-row:1/span 2;height:min(720px,calc(100vh - 7rem)); } .novax-center-column { grid-column:2;grid-row:1;min-height:520px; } .novax-right-column { grid-column:2;grid-row:2; } }
-        .novax-launch-screen { position:fixed;inset:0;z-index:100;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 100%,rgba(41,61,103,.95),rgba(17,20,28,.98) 68%),url('/src/IMAGENfondo.png') center/cover; }
+        .novax-launch-screen { position:fixed;inset:0;z-index:100;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 100%,rgba(41,61,103,.95),rgba(17,20,28,.98) 68%),url('${BACKGROUND_URL}') center/cover; }
         .novax-launch-screen::before,.novax-launch-screen::after { content:'';position:absolute;inset:-40%;background-image:radial-gradient(2px 2px at 10% 20%,#eff0f4 40%,transparent 60%),radial-gradient(1px 1px at 70% 33%,#a8c2ef 40%,transparent 60%),radial-gradient(2px 2px at 84% 72%,#eff0f4 40%,transparent 60%),radial-gradient(1px 1px at 38% 66%,#eff0f4 40%,transparent 60%);background-size:370px 320px;animation:novax-stars 10s linear infinite;opacity:.65; }
         .novax-launch-screen::after { background-position:170px 120px;animation-duration:15s;opacity:.35; }
         .novax-launch-copy { position:absolute;z-index:2;top:17%;width:100%;padding:0 1.5rem;text-align:center;animation:novax-copy-in .5s ease-out both; }
@@ -382,7 +384,7 @@ export default function App() {
       <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-4 py-3">
         <div className="max-w-[1680px] mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {activeTab !== 'home' && <img src="/src/Imagen%20pegada.png" alt="NOVAX" className="novax-header-logo" />}
+            {activeTab !== 'home' && <img src={LOGO_URL} alt="NOVAX" className="novax-header-logo" />}
           </div>
           <nav aria-label="Navegación principal" className="flex items-center gap-2">
             <button onClick={() => setActiveTab('home')} className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${activeTab === 'home' ? 'bg-cyan-500/20 text-cyan-300' : 'text-slate-400 hover:text-slate-100'}`}>
@@ -402,7 +404,7 @@ export default function App() {
       {activeTab === 'home' ? (
         <main className="novax-hero relative flex flex-1 items-center justify-center px-6 py-16 text-center">
           <div className="novax-hero-content relative z-10 mx-auto flex max-w-3xl flex-col items-center">
-            <img src="/src/Imagen%20pegada.png" alt="NOVAX" className="novax-hero-logo mb-8" />
+            <img src={LOGO_URL} alt="NOVAX" className="novax-hero-logo mb-8" />
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">Exploración infrarroja</p>
             <h2 className="mb-4 text-3xl font-bold leading-tight text-white sm:text-5xl">Descubre lo que se mueve en el cielo</h2>
             <p className="mb-8 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
@@ -683,7 +685,7 @@ export default function App() {
               {/* Brand mark directly below the detection map */}
               <div className="flex justify-center items-center py-3" aria-label="NOVAX">
                 <img
-                  src="/src/Imagen%20pegada.png"
+                  src={LOGO_URL}
                   alt="NOVAX"
                   className="h-16 w-auto object-contain opacity-90"
                   style={{ filter: 'brightness(0) invert(1)' }}
